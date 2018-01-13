@@ -22,8 +22,8 @@ exports.doRegist = function(req,res){
 		var password = fields.password1;
 
 		//此时要进行加密！下面的语句表示用SHA256加密password然后处理为16进制
-		//拼接一个我是考拉的目的就是防止黑客能够破译，增加破译难度。
-		password = crypto.createHash('SHA256').update(password + "我是考拉").digest("hex");
+		//拼接一个我是杨溢的目的就是防止黑客能够破译，增加破译难度。
+		password = crypto.createHash('SHA256').update(password + "我是杨溢").digest("hex");
 
 		//在写入数据库之前，我们再次验证用户名是否存在了！
 		User.count({"email" : email} , function(err , count){
